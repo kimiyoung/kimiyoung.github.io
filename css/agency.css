@@ -35,23 +35,27 @@ a.active {
 }
 
 a {
-    color: #D0D0D0;
+    color: #C0C0C0;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #C0C0C0;
+    color: #D0D0D0;
 }
 
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
     text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+h4 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -859,4 +863,54 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #D0D0D0;
+}
+
+.panel {
+    margin: auto;
+    position: relative;
+}
+
+.card {
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.front {
+    z-index: 2;
+    background-image: url(http://img.afreecodec.com/images/v3/wp-content/uploads/2011/05/00_chrome_icon.jpg);
+}
+
+.back {
+    z-index: 1;
+    -webkit-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);  
+    transform: rotateX(-180deg);  
+    background-image: url(http://www.digitaltrends.com/wp-content/uploads/2011/03/ie-9-icon.jpg);
+}
+
+.panel:hover .front {
+    z-index: 1;
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.panel:hover .back {
+    z-index: 2;   
+    -webkit-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
 }
